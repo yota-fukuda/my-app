@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import styled from "styled-components"
 import RightNav from './rightNav';
 
-interface Props {
+type Props = {
     open: boolean
 }
 
-const StyledBurger =styled.div<Props>`
+const StyledBurger =styled.div<{open: boolean}>`
       width: 2rem;
       height: 2rem;
       position: fixed;
@@ -52,7 +52,7 @@ const Burger = () => {
         <div />
         <div />
     </StyledBurger>
-    {/* <RightNav open={Boolean(open)}/> */}
+    <RightNav open={open} setOpen={setOpen} />
     </>
   );
 }

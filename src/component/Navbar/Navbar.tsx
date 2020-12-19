@@ -8,10 +8,13 @@ const Nav = styled.nav`
     border-bottom: 2px solid #f1f1f1;
     display: flex;
     justify-content: space-between;
-    background-color: green;
+    background-color: #000;
 
     .logo {
+        color: #fff;
         padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
     }
 `;
 

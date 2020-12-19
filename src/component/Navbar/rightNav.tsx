@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from "styled-components"
 
-interface Props {
+type Props = {
     open: boolean;
+    setOpen: (v: boolean) => void;
 }
 
-const Ul = styled.ul<Props>`
+const Ul = styled.ul<{ open: boolean }>`
     list-style: none;
     display: flex;
     flex-flow: row nowrap;
@@ -14,7 +15,9 @@ const Ul = styled.ul<Props>`
     
     li {
         padding: 0 20px;
-
+        a {
+            color: #fff;
+        }
             a: hover {
                 color: red;
             }
@@ -29,20 +32,24 @@ const Ul = styled.ul<Props>`
         right: 0;
         height: 100vh;
         width: 300px;
+        margin-top: 0px;
         padding-top: 3.5rem;
         transition: transform 0.3s ease-in-out;
         
         li {
             color: #fff;
             font-size: 20px;
+            margin-bottom: 15px;
         }
     }
 `;
 
-const RightNav = ( ) => {
-    const [open, setOpen] = useState<boolean>(false)
+const RightNav = (props: Props) => {
   return (
-      <Ul open={open}>
+      <Ul 
+        open={props.open}
+        onClick={() => props.setOpen(!props.open)}
+        >
             <li>
                 <Link to="/">Home</Link>
             </li>
