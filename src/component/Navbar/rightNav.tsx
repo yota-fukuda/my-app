@@ -25,7 +25,7 @@ const Ul = styled.ul<{ open: boolean }>`
     
     @media (max-width: 768px) {
         flex-flow: column nowrap;
-        background-color: #0D2538;
+        background-color: #C0C0C0;
         position: fixed;
         transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
         top: 0;
