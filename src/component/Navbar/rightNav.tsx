@@ -35,6 +35,7 @@ const Ul = styled.ul<{ open: boolean }>`
         margin-top: 0px;
         padding-top: 3.5rem;
         transition: transform 0.3s ease-in-out;
+        z-index: 15;
         
         li {
             color: #fff;

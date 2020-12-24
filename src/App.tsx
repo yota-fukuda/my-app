@@ -7,19 +7,26 @@ import {
 } from 'react-router-dom';
 import Navbar from './component/Navbar/Navbar';
 import Homepage from './component/pages/homePage';
-// import Products from './component/pages/products';
+import SliderData from './component/SliderData/SliderData';
+import styled from 'styled-components';
+
+const Center = styled.div`
+    text-align: center;
+`;
 
 const App = () => {
   return (
     <Router>
       <Navbar />
+      <Center>
         <Switch>
             <Route exact={true} path="/" component={Homepage} />
             {/* <Route path="/page1" component={Page1} />
             <Route path="/page2" component={Page2} /> */}
             <Route component={() => <Redirect to="/" />} />
-      </Switch>
-          {/* <Route exact path='/Products' component={Products} /> */}
+        </Switch>
+        <SliderData />
+      </Center>
     </Router>
   );
 }
