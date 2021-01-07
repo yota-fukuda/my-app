@@ -55,10 +55,13 @@ const RightNav = (props: Props) => {
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/Products">Products</Link>
+                <Link to="/BigginerRider">BigginerRider</Link>
             </li>
             <li>
-                <Link to="/Contacts">Contacts</Link>
+                <Link to="/CustomBike">CustomBike</Link>
+            </li>
+            <li>
+                <Link to="/TouringSpot">TouringSpot</Link>
             </li>
       </Ul>
       

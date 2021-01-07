@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SliderData from '../SliderData/SliderData'
 
 const Font = styled.h1`
 color: #000;
@@ -21,14 +22,17 @@ text-shadow:
   0 20px 20px rgba(0,0,0,.15);
 `;
 
-const Homepage = () => {
+const FirstPage = () => {
   return (
+    <>
     <Font>
         <h1>
             No Bike No Life!
         </h1>
     </Font>
+    <SliderData />
+    </>
   );
 }
 
-export default Homepage;
+export default FirstPage;
