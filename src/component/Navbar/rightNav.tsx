@@ -23,7 +23,7 @@ const Ul = styled.ul<{ open: boolean }>`
             }
     }
     
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         flex-flow: column nowrap;
         background-color: #C0C0C0;
         position: fixed;

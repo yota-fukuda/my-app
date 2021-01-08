@@ -12,19 +12,18 @@ import image3 from '../../image/image3.png'
 
 const Slide = styled.div`
   .swipe {
-    width: 780px;
+    width: 100%;
+    background-size:contain; 
   }
     .image {
-      width: 800px;
+      margin: 0 auto;
       height: 600px;
-      border-radius: 10px;
+      width: 100%;
     }
 `;
 
 SwiperCore.use([Pagination, Navigation]);
 const SliderData = () =>{
-
-
   return (
     <Slide>
       <Swiper

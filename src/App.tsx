@@ -14,6 +14,11 @@ import styled from 'styled-components';
 
 const Center = styled.div`
     text-align: center;
+    background-color: #C0C0C0;
+    @media (max-width: 768px) {
+      wdth: 100%;
+      background-color: #FFF;
+  }
 `;
 
 const App = () => {
@@ -28,7 +33,6 @@ const App = () => {
             <Route path="/TouringSpot" component={TouringSpot} />
             <Route component={() => <Redirect to="/" />} />
         </Switch>
-
       </Center>
     </Router>
   );
