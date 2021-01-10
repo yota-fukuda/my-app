@@ -13,6 +13,8 @@ import { useCookies } from 'react-cookie';
 import Grid from '@material-ui/core/Grid';
 
 import { makeStyles } from '@material-ui/core/styles';
+// import { withRouter } from 'react-router-dom';
+import * as H from 'history'
 
 const useStyle = makeStyles(() => ({
   button: {
@@ -31,13 +33,37 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
+const BackGroundColor = styled.div`
+  background-color: #ede7f6;
+  height: 92vh;
+`;
+const Page = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Container = styled.div`
+  width: 100%;
+`;
+
 type Detail = { title: string; tags: string; text: string };
-export default function Form() {
+interface Props {
+    props: string;
+    history: H.History;
+    push: any;
+}
+
+// export default function Form() {
+const Form = (props: Props) => {
   const [tagName, set_tagName] = React.useState<string[]>([]);
   const handle_change = (event: React.ChangeEvent<{ value: unknown }>) => {
     set_tagName(event.target.value as string[]);
   };
   const classes = useStyle();
+
+  const toggleSubmit = () => {
+      props.history.push('/');
+  }
 
 //   const [cookies] = useCookies(['token']);
 //   React.useEffect(() => {
@@ -60,6 +86,7 @@ export default function Form() {
 //       console.log(er);
 //     }
 //   };
+
   return (
     // <Layout>
       <BackGroundColor>
@@ -86,7 +113,7 @@ export default function Form() {
             <Button
               className={classes.button}
               type="submit"
-            //   onClick={() => Router.push('/')}
+              onClick={toggleSubmit}
             >
               Proshareに投稿
             </Button>
@@ -97,15 +124,4 @@ export default function Form() {
   );
 }
 
-const BackGroundColor = styled.div`
-  background-color: #ede7f6;
-  height: 92vh;
-`;
-const Page = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Container = styled.div`
-  width: 100%;
-`;
+export default Form;

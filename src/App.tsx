@@ -10,6 +10,7 @@ import FirstPage from './component/pages/FirstPage';
 import BigginerRider from './component/pages/BigginerRider';
 import CustomBike from './component/pages/CustomBike';
 import TouringSpot from './component/pages/TouringSpot';
+// import Form from './component/pages/form';
 import styled from 'styled-components';
 
 const Center = styled.div`
@@ -21,19 +22,21 @@ const Center = styled.div`
   }
 `;
 
+
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Center>
-        <Switch>
-            <Route exact={true} path="/" component={FirstPage} />
-            <Route path="/BigginerRider" component={BigginerRider} />
-            <Route path="/CustomBike" component={CustomBike} />
-            <Route path="/TouringSpot" component={TouringSpot} />
-            <Route component={() => <Redirect to="/" />} />
-        </Switch>
-      </Center>
+        <Navbar />
+        <Center>
+          <Switch>
+              {/* <Route path="/form" component={Form} /> */}
+              <Route exact={true} path="/" component={FirstPage} />
+              <Route path="/BigginerRider" component={BigginerRider} />
+              <Route path="/CustomBike" component={CustomBike} />
+              <Route path="/TouringSpot" component={TouringSpot} />
+              <Route component={() => <Redirect to="/" />} />
+          </Switch>
+        </Center>
     </Router>
   );
 }

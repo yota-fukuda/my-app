@@ -1,12 +1,17 @@
 import React from 'react';
-// import { BrowserRouter as Router } from 'react-router-dom';
+import {
+    Link
+  } from 'react-router-dom';
 import { createStyles, fade, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import CreateIcon from '@material-ui/icons/Create';
-import Button from '@material-ui/core/Button';;
+import Button from '@material-ui/core/Button';
+
+import BigginerRider from '../pages/BigginerRider';
+import Form from '../pages/form';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -80,7 +85,6 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-
 const Navbar = ()=> {
   const classes = useStyles();
   return (
@@ -101,7 +105,13 @@ const Navbar = ()=> {
                 inputProps={{ 'aria-label': 'search' }}
                 />
         </div>
-        <Button variant="outlined" color="primary" className={classes.button} >
+        <Button
+            component={Link}
+            to="/BigginerRider"
+            variant="outlined" 
+            color="primary" 
+            className={classes.button}
+            >
             <CreateIcon />
             投稿
         </Button>
