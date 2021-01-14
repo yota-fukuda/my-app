@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import SliderData from '../SliderData/SliderData'
+import SliderData from '../SliderData/SliderData';
+// import firebase, { db } from '../../component/config/firebase';
+import CreateList from './CreateList'
+import Lists from './Lists'
 
 const Layout = styled.div`
   margin: 0 auto;
@@ -38,7 +41,10 @@ const FirstPage = () => {
           No Bike No Life!
         </div>
       <SliderData />
+      <CreateList />
+      <Lists />
       </Layout>
+
     </>
   );
 }

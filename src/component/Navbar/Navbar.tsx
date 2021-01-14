@@ -10,8 +10,7 @@ import InputBase from '@material-ui/core/InputBase';
 import CreateIcon from '@material-ui/icons/Create';
 import Button from '@material-ui/core/Button';
 
-import BigginerRider from '../pages/BigginerRider';
-import Form from '../pages/form';
+// import BigginerRider from '../pages/Form';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -108,6 +107,7 @@ const Navbar = ()=> {
         <Button
             component={Link}
             to="/BigginerRider"
+            // to="/form"
             variant="outlined" 
             color="primary" 
             className={classes.button}
